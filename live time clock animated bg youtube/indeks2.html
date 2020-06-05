@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clock Reminder</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script>
+function starTime(){
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+    var t = setTimeout(starTime,500);
+}
+function checkTime(i){
+    if(i < 10) {i = "0" + 1}; // add zero in front of numbers <10
+    return i;
+}
+
+    </script>
+</head>
+<body onload="starTime()">
+    <div class="main">
+        <div id="clock"></div>
+
+        <h1>Good Night</h1>
+        <h6>Have a Nice Dream</h6>
+
+        <div class="box">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+    </div>
+
+</body>
+</html>
